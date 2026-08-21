@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yang Yanqiao — Undergraduate student building digital projects and exploring AI-assisted creativity." />
+  <meta name="description" content="Yang Yanqiao — undergraduate building digital projects at the intersection of technology and creativity." />
   <meta name="author" content="Yang Yanqiao" />
-  <title>Yang Yanqiao — Digital Projects & AI-assisted Creativity</title>
+  <meta name="color-scheme" content="light" />
+  <title>Yang Yanqiao — Digital Projects & Creative Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -16,10 +17,8 @@
   <header class="site-header" id="top">
     <a href="#top" class="brand">Yang Yanqiao</a>
     <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -28,60 +27,61 @@
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-inner">
-        <p class="hero-eyebrow">Portfolio</p>
+        <p class="hero-eyebrow"><span class="hero-index">01</span> Portfolio</p>
         <h1 class="hero-title">Yang Yanqiao</h1>
-        <p class="hero-sub">Undergraduate Student · Digital Projects · AI-assisted Creativity</p>
+        <p class="hero-sub">Digital Projects · Creative Technology · Music</p>
         <p class="hero-intro">
-          I build digital projects and explore creative possibilities with technology and AI.
+          I build things that sit somewhere between technology and creativity.
         </p>
+        <dl class="hero-meta" aria-label="Profile">
+          <div class="hero-meta-item">
+            <dt>Based in</dt>
+            <dd>China</dd>
+          </div>
+          <div class="hero-meta-item">
+            <dt>Status</dt>
+            <dd>Undergraduate</dd>
+          </div>
+          <div class="hero-meta-item">
+            <dt>Year</dt>
+            <dd>2026</dd>
+          </div>
+        </dl>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#about" class="btn btn-ghost">About Me</a>
+          <a href="#work" class="btn btn-primary">View Work <span aria-hidden="true">↓</span></a>
+          <a href="#about" class="btn btn-ghost">About</a>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section-head">
-        <span class="section-index">01</span>
-        <h2 class="section-title">About</h2>
-      </div>
-      <div class="section-body about-body">
-        <p>
-          I'm an undergraduate student interested in digital projects, AI, web development, and creative work.
-        </p>
-        <p>
-          I enjoy turning ideas into things that can actually be seen and used — whether that's a small web project, a piece of music, or an experiment built around a new tool.
-        </p>
-      </div>
-    </section>
-
-    <!-- SELECTED PROJECTS -->
-    <section class="section" id="projects">
+    <!-- SELECTED WORK -->
+    <section class="section" id="work">
       <div class="section-head">
         <span class="section-index">02</span>
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-kicker">A small set of projects across web and music.</p>
       </div>
 
       <div class="projects">
-        <!-- Project 01 -->
-        <article class="project">
+        <!-- Project 01 — editorial text layout -->
+        <article class="project project-text">
           <div class="project-meta">
             <span class="project-number">01</span>
-            <span class="project-type">Web Project</span>
+            <span class="project-type">Interactive Web Project</span>
           </div>
           <h3 class="project-title">Yinshu · Zhichuan</h3>
           <p class="project-desc">
-            An interactive web project exploring the digital presentation of traditional Chinese fitness culture.
+            An interactive digital project exploring the presentation and transformation of traditional Chinese health and movement culture through the web.
           </p>
           <div class="project-links">
-            <a href="https://dulcet-chebakia-2c65aa.netlify.app/" target="_blank" rel="noopener noreferrer" class="link-arrow">Live Demo <span aria-hidden="true">→</span></a>
-            <a href="https://github.com/YangYanqiao13/yinshuzhichuan" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/YangYanqiao13/Yinshu-Zhichuan" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://dulcet-chebakia-2c65aa.netlify.app/" target="_blank" rel="noopener noreferrer" class="link-arrow">Live Demo <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
-        <!-- Project 02 -->
+        <hr class="project-divider" />
+
+        <!-- Project 02 — music module -->
         <article class="project project-music">
           <div class="project-meta">
             <span class="project-number">02</span>
@@ -120,22 +120,36 @@
 
           <div class="lyrics-block">
             <h4 class="lyrics-title">Lyrics</h4>
-            <pre class="lyrics-content" id="earpods-lyrics"><span class="muted">Loading lyrics…</span></pre>
+            <pre class="lyrics-content" id="earpods-lyrics" aria-live="polite"><span class="muted">Loading…</span></pre>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-head">
+        <span class="section-index">03</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="section-body about-body">
+        <p>
+          I'm an undergraduate student interested in digital projects, AI-assisted creativity, web development, and creative expression.
+        </p>
+        <p>
+          I like turning ideas into things that can actually be seen and used — a small web project, a piece of music, or an experiment built around a new tool. This site collects some of that work in one place.
+        </p>
       </div>
     </section>
 
     <!-- EXPERIENCE & ACTIVITIES -->
     <section class="section" id="experience">
       <div class="section-head">
-        <span class="section-index">03</span>
+        <span class="section-index">04</span>
         <h2 class="section-title">Experience &amp; Activities</h2>
+        <p class="section-kicker">A growing list — to be updated.</p>
       </div>
       <div class="section-body">
-        <p class="timeline-note">
-          A timeline of experiences and activities will appear here.
-        </p>
         <ol class="timeline" aria-label="Experience timeline">
           <li class="timeline-item timeline-empty">
             <span class="timeline-dot" aria-hidden="true"></span>
@@ -159,17 +173,6 @@
             </div>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section class="section" id="resume">
-      <div class="section-head">
-        <span class="section-index">04</span>
-        <h2 class="section-title">Resume</h2>
-      </div>
-      <div class="section-body">
-        <p class="resume-status">Coming soon</p>
       </div>
     </section>
 

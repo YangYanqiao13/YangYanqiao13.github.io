@@ -1,6 +1,7 @@
 /* =========================================================
    Yang Yanqiao — Portfolio
-   Minimal interactions: footer year + gentle scroll reveal.
+   Minimal interactions: footer year, gentle scroll reveal,
+   EarPods On audio player, lyrics loader.
    ========================================================= */
 
 (function () {
@@ -19,42 +20,44 @@
 
   // Subtle scroll reveal for sections and key blocks
   var targets = document.querySelectorAll(
-    ".section-head, .section-body, .hero-inner, .project, .music-block, .lyrics-block, .contact-row, .resume-status"
+    ".section-head, .section-body, .hero-inner, .project, .music-block, .lyrics-block, .contact-row"
   );
 
   if (prefersReduced || !("IntersectionObserver" in window)) {
     targets.forEach(function (el) {
       el.classList.add("is-visible");
     });
-    return;
+  } else {
+    targets.forEach(function (el) {
+      el.classList.add("reveal");
+    });
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.08
+      }
+    );
+
+    targets.forEach(function (el) {
+      observer.observe(el);
+    });
   }
-
-  targets.forEach(function (el) {
-    el.classList.add("reveal");
-  });
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      rootMargin: "0px 0px -8% 0px",
-      threshold: 0.08
-    }
-  );
-
-  targets.forEach(function (el) {
-    observer.observe(el);
-  });
 })();
 
 /* =========================================================
    EarPods On — audio player + lyrics loader.
+   - No autoplay (preload="metadata" only)
+   - Play / pause toggle, draggable seek, current time / duration
+   - fetch('lyrics.txt') with friendly fallback + console error
    ========================================================= */
 (function () {
   "use strict";
@@ -97,7 +100,9 @@
   if (toggle) {
     toggle.addEventListener("click", function () {
       if (audio.paused || audio.ended) {
-        audio.play().catch(function () {});
+        audio.play().catch(function (err) {
+          if (window.console) console.error("[EarPods On] play() failed:", err);
+        });
       } else {
         audio.pause();
       }
@@ -122,20 +127,24 @@
     });
   }
 
-  // Lyrics loader — fetches the plain text file and renders it.
-  // Works on GitHub Pages (HTTP). Falls back gracefully when blocked (file://).
+  // Lyrics loader — fetches lyrics.txt and renders it.
+  // Works on GitHub Pages (HTTP). Falls back gracefully on file:// or 404.
   var lyricsEl = document.getElementById("earpods-lyrics");
   if (lyricsEl) {
-    fetch("lyrics.txt")
+    fetch("lyrics.txt", { cache: "no-cache" })
       .then(function (r) {
-        return r.ok ? r.text() : Promise.reject(new Error("not found"));
+        if (!r.ok) {
+          throw new Error("HTTP " + r.status + " — lyrics.txt could not be loaded");
+        }
+        return r.text();
       })
       .then(function (text) {
-        var t = (text || "").replace(/\r\n/g, "\n").replace(/\r/g, "\n").trim();
-        lyricsEl.textContent = t ? t : "Lyrics to be added.";
+        var t = (text || "").replace(/\r\n/g, "\n").replace(/\r/g, "\n").replace(/\u00a0/g, " ").trim();
+        lyricsEl.textContent = t ? t : "Lyrics unavailable.";
       })
-      .catch(function () {
-        lyricsEl.textContent = "Lyrics to be added.";
+      .catch(function (err) {
+        if (window.console) console.error("[EarPods On] lyrics load failed:", err);
+        lyricsEl.textContent = "Lyrics unavailable.";
       });
   }
 })();
