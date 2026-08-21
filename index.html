@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yang Yanqiao — Undergraduate student building digital projects and exploring AI-assisted creativity." />
+  <meta name="author" content="Yang Yanqiao" />
+  <title>Yang Yanqiao — Digital Projects & AI-assisted Creativity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header" id="top">
+    <a href="#top" class="brand">Yang Yanqiao</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Portfolio</p>
+        <h1 class="hero-title">Yang Yanqiao</h1>
+        <p class="hero-sub">Undergraduate Student · Digital Projects · AI-assisted Creativity</p>
+        <p class="hero-intro">
+          I build digital projects and explore creative possibilities with technology and AI.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#about" class="btn btn-ghost">About Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="section-head">
+        <span class="section-index">01</span>
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="section-body about-body">
+        <p>
+          I'm an undergraduate student interested in digital projects, AI, web development, and creative work.
+        </p>
+        <p>
+          I enjoy turning ideas into things that can actually be seen and used — whether that's a small web project, a piece of music, or an experiment built around a new tool.
+        </p>
+      </div>
+    </section>
+
+    <!-- SELECTED PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-head">
+        <span class="section-index">02</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
+
+      <div class="projects">
+        <!-- Project 01 -->
+        <article class="project">
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <span class="project-type">Web Project</span>
+          </div>
+          <h3 class="project-title">Yinshu · Zhichuan</h3>
+          <p class="project-desc">
+            An interactive web project exploring the digital presentation of traditional Chinese fitness culture.
+          </p>
+          <div class="project-links">
+            <a href="https://dulcet-chebakia-2c65aa.netlify.app/" target="_blank" rel="noopener noreferrer" class="link-arrow">Live Demo <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/YangYanqiao13/yinshuzhichuan" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="project project-music">
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <span class="project-type">AI-assisted Original Music</span>
+          </div>
+          <h3 class="project-title">EarPods On</h3>
+          <p class="project-desc">
+            An original bedroom-pop track created through AI-assisted songwriting, arrangement and production.
+          </p>
+
+          <div class="music-block" aria-label="EarPods On player">
+            <div class="music-cover">
+              <img src="assets/earposon/cover.jpg" alt="EarPods On cover art" loading="lazy" />
+              <button class="play-toggle" type="button" aria-label="Play EarPods On" aria-pressed="false">
+                <span class="play-icon" aria-hidden="true">&#9654;</span>
+                <span class="pause-icon" aria-hidden="true">&#10073;&#10073;</span>
+              </button>
+            </div>
+            <div class="music-body">
+              <div class="music-track">
+                <span class="track-title">EarPods On</span>
+                <span class="track-time">
+                  <span class="current-time">0:00</span>
+                  <span class="time-sep" aria-hidden="true">/</span>
+                  <span class="duration-time">0:00</span>
+                </span>
+              </div>
+              <div class="progress">
+                <span class="progress-track" aria-hidden="true"></span>
+                <span class="progress-fill" aria-hidden="true"></span>
+                <input type="range" class="progress-input" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+              </div>
+              <audio src="assets/earposon/EarPodsOn.mp3" preload="metadata"></audio>
+            </div>
+          </div>
+
+          <div class="lyrics-block">
+            <h4 class="lyrics-title">Lyrics</h4>
+            <pre class="lyrics-content" id="earpods-lyrics"><span class="muted">Loading lyrics…</span></pre>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & ACTIVITIES -->
+    <section class="section" id="experience">
+      <div class="section-head">
+        <span class="section-index">03</span>
+        <h2 class="section-title">Experience &amp; Activities</h2>
+      </div>
+      <div class="section-body">
+        <p class="timeline-note">
+          A timeline of experiences and activities will appear here.
+        </p>
+        <ol class="timeline" aria-label="Experience timeline">
+          <li class="timeline-item timeline-empty">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-when muted">—</span>
+              <span class="timeline-entry muted">To be added</span>
+            </div>
+          </li>
+          <li class="timeline-item timeline-empty">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-when muted">—</span>
+              <span class="timeline-entry muted">To be added</span>
+            </div>
+          </li>
+          <li class="timeline-item timeline-empty">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-when muted">—</span>
+              <span class="timeline-entry muted">To be added</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="section" id="resume">
+      <div class="section-head">
+        <span class="section-index">04</span>
+        <h2 class="section-title">Resume</h2>
+      </div>
+      <div class="section-body">
+        <p class="resume-status">Coming soon</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-head">
+        <span class="section-index">05</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="section-body contact-list">
+        <a href="https://github.com/YangYanqiao13" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/YangYanqiao13 <span aria-hidden="true">↗</span></span>
+        </a>
+        <div class="contact-row contact-row-placeholder">
+          <span class="contact-label">Email</span>
+          <span class="contact-value muted">to be added</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Yang Yanqiao. All rights reserved.</p>
+    <p class="footer-note">Built with HTML, CSS &amp; JavaScript.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
