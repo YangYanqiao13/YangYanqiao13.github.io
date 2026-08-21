@@ -126,7 +126,7 @@
   // Works on GitHub Pages (HTTP). Falls back gracefully when blocked (file://).
   var lyricsEl = document.getElementById("earpods-lyrics");
   if (lyricsEl) {
-    fetch("assets/earposon/lyrics.txt")
+    fetch("lyrics.txt")
       .then(function (r) {
         return r.ok ? r.text() : Promise.reject(new Error("not found"));
       })
